@@ -1,14 +1,14 @@
-server '13.233.199.9', port: 22, roles: [:web, :app, :db], primary: true
+server '65.2.73.207', port: 22, roles: [:web, :app, :db], primary: true
 set :puma_conf, "/var/www/tracker/shared/config/puma.rb"
 set :application, 'tracker' 
-set :deploy_to, '/home/ubuntu/trackerr'
+set :deploy_to, '/home/ubuntu/tracker'
 set :use_sudo, true
 set :branch, 'master'
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
 set :repo_url,        'https://github.com/shreya-bacancy/tracker.git'
 ## Linked Files & Directories (Default None):
-set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/database.yml config/master.key}
  
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
