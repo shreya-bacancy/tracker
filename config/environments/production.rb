@@ -91,7 +91,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-end
+
 
   config.require_master_key = true
 
@@ -116,4 +116,4 @@ Rails.application.config.middleware.use ExceptionNotification::Rack,
     exception_recipients: %w{shreya.mundra@bacancytechnology.com}
   }
 
-
+end
