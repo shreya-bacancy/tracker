@@ -92,3 +92,28 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
+
+  config.require_master_key = true
+
+  config.assets.quiet = true
+  config.action_mailer.default_url_options = { host: 'http://65.2.73.207' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'gmail.com',
+    user_name:            'shreyamundra90@gmail.com',
+    password:             'Shreya@12271997',
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
+end
+
+Rails.application.config.middleware.use ExceptionNotification::Rack,
+  email: {
+    email_prefix: 'test Server',
+    sender_address: %{"notifier" <shreyamundra90@gmail.com>},
+    exception_recipients: %w{shreya.mundra@bacancytechnology.com}
+  }
+
+
