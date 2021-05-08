@@ -107,7 +107,6 @@ Rails.application.configure do
     authentication:       'plain',
     enable_starttls_auto: true
   }
-end
 
 Rails.application.config.middleware.use ExceptionNotification::Rack,
   email: {
@@ -115,5 +114,4 @@ Rails.application.config.middleware.use ExceptionNotification::Rack,
     sender_address: %{"notifier" <shreyamundra90@gmail.com>},
     exception_recipients: %w{shreya.mundra@bacancytechnology.com}
   }
-
 end
